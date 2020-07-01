@@ -14,10 +14,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.9",
     "@rjsf/core": "^2.2.0",
+    "aws-amplify": "^3.0.18",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "recoil": "0.0.10"
+    "react-router-dom": "^5.2.0",
+    "recoil": "0.0.10",
+    "regenerator-runtime": "^0.13.5"
   },
   "devDependencies": {
     "cypress": "^4.9.0",
