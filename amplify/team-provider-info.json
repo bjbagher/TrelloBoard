@@ -1,0 +1,20 @@
+{
+    "feature": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-trelloboard-feature-165137-authRole",
+            "UnauthRoleArn": "arn:aws:iam::332225381839:role/amplify-trelloboard-feature-165137-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::332225381839:role/amplify-trelloboard-feature-165137-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-trelloboard-feature-165137-deployment",
+            "UnauthRoleName": "amplify-trelloboard-feature-165137-unauthRole",
+            "StackName": "amplify-trelloboard-feature-165137",
+            "StackId": "arn:aws:cloudformation:us-east-1:332225381839:stack/amplify-trelloboard-feature-165137/a92317b0-bbdc-11ea-9491-0a59ae10838a",
+            "AmplifyAppId": "d3p4pa3npkdw9d"
+        },
+        "categories": {
+            "auth": {
+                "trelloboard2ab20c70": {}
+            }
+        }
+    }
+}

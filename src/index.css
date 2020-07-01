@@ -9,6 +9,11 @@ html {
     background-color: #F4F4F4;
 }
 
+
+nav ul {
+    display: flex;
+}
+
 .outer-input {
     display: flex;
     margin: 50px;
