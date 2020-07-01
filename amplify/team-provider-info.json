@@ -13,7 +13,9 @@
         },
         "categories": {
             "auth": {
-                "trelloboard2ab20c70": {}
+                "trelloboard2ab20c70": {
+                    "hostedUIProviderCreds": "[]"
+                }
             }
         }
     }

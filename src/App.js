@@ -1,11 +1,44 @@
-import React, { useEffect, useState } from "react"
+import React, { Component, useEffect, useState } from "react"
 import Board from "./Board/Board.js"
 import { BrowserRouter as Router, Link, Switch } from "react-router-dom"
 
 
-import Amplify, { Auth } from 'aws-amplify';
+// import Amplify, { Auth } from 'aws-amplify';
 
+// import React, { Component } from "react";
+// import Amplify from "aws-amplify";
+// import { withOAuth } from "aws-amplify-react";
+// import aws_exports from "./aws-exports";
 
+// Amplify.configure(aws_exports);
+
+// class Landing extends Component {
+//     render() {
+//         return (
+//             <div className="App">
+//                 <header className="App-header">
+//                     <img src={logo} className="App-logo" alt="logo" />
+//                     <p>
+//                         Edit <code>src/App.js</code> and save to reload.
+//           </p>
+//                     <a
+//                         className="App-link"
+//                         href="https://reactjs.org"
+//                         target="_blank"
+//                         rel="noopener noreferrer"
+//                     >
+//                         Learn React
+//           </a>
+//                     <button onClick={this.props.OAuthSignIn}>
+//                         Sign in with Facebook
+//           </button>
+//                 </header>
+//             </div>
+//         );
+//     }
+// }
+
+// export default withOAuth(App);
 // Amplify.configure({
 //     Auth: {
 
@@ -220,6 +253,9 @@ function App() {
                         <li>
                             <Link to="/sign-up">Sign up</Link>
                         </li>
+                        <li>
+                            <Link to="/board">Board</Link>
+                        </li>
                     </ul>
                 </nav>
                 <Switch>
@@ -229,8 +265,12 @@ function App() {
                     <Router path="/sign-up">
                         <Signup />
                     </Router>
+                    <Router path="/board">
+                        <Board />
+                    </ Router >
                     <Router path="/">
                         <Board />
+                        {/* <Landing /> */}
                     </Router>
                 </Switch>
             </Router>
