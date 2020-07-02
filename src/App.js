@@ -14,8 +14,8 @@ import { BrowserRouter as Router, Link, Switch } from "react-router-dom"
 
 
 import Amplify, { Auth, Hub } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
+// import awsconfig from './aws-exports';
+// Amplify.configure(awsconfig);
 
 class Landing extends Component {
     state = { user: null, customState: null };
