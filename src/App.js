@@ -296,6 +296,7 @@ function App() {
                         <li>
                             <Link to="/board">Board</Link>
                         </li>
+                        <button onClick={() => Auth.signOut()}>Sign Out {"a"}</button>
                     </ul>
                 </nav>
                 <Switch>
