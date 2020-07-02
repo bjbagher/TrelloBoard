@@ -1,6 +1,4 @@
 {
-    "identityPoolName": "trelloboard2ab20c70_identitypool_2ab20c70",
-    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "trello2ab20c70",
     "userPoolName": "trelloboard2ab20c70_userpool_2ab20c70",
     "autoVerifiedAttributes": [
@@ -14,14 +12,14 @@
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
-    "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 8,
+    "defaultPasswordPolicy": true,
+    "passwordPolicyMinLength": "6",
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
         "email"
     ],
     "userpoolClientGenerateSecret": true,
-    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientRefreshTokenValidity": "30",
     "userpoolClientWriteAttributes": [
         "email"
     ],
@@ -29,10 +27,10 @@
         "email"
     ],
     "userpoolClientLambdaRole": "trello2ab20c70_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
+    "userpoolClientSetAttributes": true,
     "sharedId": "2ab20c70",
     "resourceName": "trelloboard2ab20c70",
-    "authSelections": "identityPoolAndUserPool",
+    "authSelections": "userPoolOnly",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -45,12 +43,19 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
+    "useDefault": "manual",
     "userPoolGroupList": [],
     "dependsOn": [],
     "hostedUI": true,
-    "hostedUIDomainName": "trelloboardeb52727b-eb52727b",
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": "{}",
+    "hostedUIDomainName": "trelloboardc2872691-c2872691",
     "authProvidersUserPool": [],
     "hostedUIProviderMeta": "[]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:1234/\"],\"LogoutURLs\":[\"http://localhost:1234/\"]}"
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://master.d2dbrifwdknjod.amplifyapp.com/\"],\"LogoutURLs\":[\"https://master.d2dbrifwdknjod.amplifyapp.com/\"]}",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": []
 }
