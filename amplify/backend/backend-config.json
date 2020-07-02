@@ -1,10 +1,10 @@
 {
-    "auth": {
-        "trelloboard2ab20c70": {
-            "service": "Cognito",
-            "providerPlugin": "awscloudformation",
-            "dependsOn": [],
-            "customAuth": false
-        }
-    }
+	"auth": {
+		"trelloboardd198a709": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
 }

@@ -1,6 +1,8 @@
 {
-    "resourceNameTruncated": "trello2ab20c70",
-    "userPoolName": "trelloboard2ab20c70_userpool_2ab20c70",
+    "identityPoolName": "trelloboardd198a709_identitypool_d198a709",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "trellod198a709",
+    "userPoolName": "trelloboardd198a709_userpool_d198a709",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -12,25 +14,25 @@
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
-    "defaultPasswordPolicy": true,
-    "passwordPolicyMinLength": "6",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
         "email"
     ],
     "userpoolClientGenerateSecret": true,
-    "userpoolClientRefreshTokenValidity": "30",
+    "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
         "email"
     ],
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "trello2ab20c70_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": true,
-    "sharedId": "2ab20c70",
-    "resourceName": "trelloboard2ab20c70",
-    "authSelections": "userPoolOnly",
+    "userpoolClientLambdaRole": "trellod198a709_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "d198a709",
+    "resourceName": "trelloboardd198a709",
+    "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -43,19 +45,15 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
-    "userPoolGroupList": [],
-    "dependsOn": [],
+    "useDefault": "defaultSocial",
     "hostedUI": true,
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "triggers": "{}",
-    "hostedUIDomainName": "trelloboardc2872691-c2872691",
+    "usernameAttributes": [
+        "email"
+    ],
+    "hostedUIDomainName": "trelloboardd198a709-d198a709",
     "authProvidersUserPool": [],
     "hostedUIProviderMeta": "[]",
     "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://master.d2dbrifwdknjod.amplifyapp.com/\"],\"LogoutURLs\":[\"https://master.d2dbrifwdknjod.amplifyapp.com/\"]}",
-    "parentStack": {
-        "Ref": "AWS::StackId"
-    },
-    "permissions": []
+    "userPoolGroupList": [],
+    "dependsOn": []
 }
