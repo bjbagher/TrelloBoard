@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { useRecoilState } from "recoil"
-import OuterSection from "./Section/OuterSection.js"
+import SectionContainer from "./SectionContainer/SectionContainer.js"
 import { allStates, generateAtom } from "../store/store.js"
 
 
@@ -22,7 +22,7 @@ export default function Board() {
             </div>
             <div className="board">
                 <div className="outer-section">
-                    {states.states.map((todo, i) => <OuterSection key={`name-${todo}-${i}`} i={i} state={todo} />)}
+                    {states.states.map((todo, i) => <SectionContainer key={`name-${todo}-${i}`} i={i} state={todo} />)}
                 </div>
             </div>
         </>

@@ -1,15 +1,19 @@
 import React from "react"
 import { useSetRecoilState, useRecoilValue } from "recoil"
-import { selectedState, dispatchState, addState } from "../../store/store.js"
-import { addTodo, selectTodo, delTodo, movePrev, moveNext } from "../../store/actionCreator.js"
-import { reducerSelector } from "../../store/reducer.js"
+import { selectedState, dispatchState, addState } from "../../../store/store.js"
+import { addForm, addTodo, selectTodo, delTodo, movePrev, moveNext } from "../../../store/actionCreator.js"
+import { reducerSelector } from "../../../store/reducer.js"
 import Card from "./Card/Card.js"
 import Form from "@rjsf/core";
 
 export default function Section({ state }) {
+
+    let n = 1
+    console.log("section", n++)
+
     const setDispatch = useSetRecoilState(dispatchState)
     const reducer = useSetRecoilState(reducerSelector(state))
-    const addSwitch = useRecoilValue(addState)
+    const showForm = useRecoilValue(addState)
     const selected = useRecoilValue(selectedState)
     const local = useRecoilValue(state)
     const schema = {
@@ -23,36 +27,35 @@ export default function Section({ state }) {
         }
     }
 
+    const dispatch = action => {
+        setDispatch(action)
+        reducer()
+    }
+
     const handleAdd = ({ title, priority, img }) => {
-        setDispatch(addTodo({ title, priority, img }))
-        reducer()
+        dispatch(addTodo({ title, priority, img }))
         handleSelect(null)
-        setDispatch({ type: "ADD_SWITCH", payload: state })
-        reducer()
+        dispatch(addForm(state))
     }
 
     const handleSelect = id => {
-        setDispatch(selectTodo(id, state))
-        reducer()
+        dispatch(selectTodo({id, state}))
     }
 
     const handleDelete = () => {
-        setDispatch(delTodo(selected.id))
-        reducer()
+        dispatch(delTodo(selected.id))
         handleSelect(null)
     }
 
     const handleMovePrev = (title, priority, img) => {
         handleDelete()
-        setDispatch(movePrev({ title, priority, img }))
-        reducer()
+        dispatch(movePrev({ title, priority, img }))
         handleSelect(null)
     }
 
     const handleMoveNext = (title, priority, img) => {
         handleDelete()
-        setDispatch(moveNext({ title, priority, img }))
-        reducer()
+        dispatch(moveNext({ title, priority, img }))
         handleSelect(null)
     }
 
@@ -65,7 +68,7 @@ export default function Section({ state }) {
                 isSelected={selected.id === i && selected.state === state}
                 handleMovePrev={handleMovePrev}
                 handleMoveNext={handleMoveNext} />)}
-            {addSwitch === state && <Form schema={schema} onSubmit={(e) => handleAdd(e.formData)} autoFocus />}
+            {showForm === state && <Form schema={schema} onSubmit={(e) => handleAdd(e.formData)} autoFocus />}
         </section>
     )
 }

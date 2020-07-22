@@ -8,24 +8,14 @@
     "prebuild": "run-s clean",
     "build": "parcel build src/index.html --no-source-maps",
     "clean": "rimraf ./dist",
-    "start": "parcel src/index.html --open"
+    "start": "parcel serve src/index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aws-amplify/analytics": "^2.2.8",
-    "@aws-amplify/api": "^2.2.1",
-    "@aws-amplify/auth": "^2.1.8",
-    "@aws-amplify/core": "^2.3.0",
-    "@aws-amplify/interactions": "^2.1.8",
-    "@aws-amplify/storage": "^2.2.3",
-    "@aws-amplify/ui": "^2.0.2",
-    "@aws-amplify/ui-react": "^0.2.9",
-    "@aws-amplify/xr": "^1.1.5",
     "@rjsf/core": "^2.2.0",
-    "aws-amplify": "^3.0.18",
-    "aws-amplify-react": "^4.1.17",
+    "parcel": "^2.0.0-beta.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
@@ -33,7 +23,6 @@
     "regenerator-runtime": "^0.13.5"
   },
   "devDependencies": {
-    "cypress": "^4.9.0",
     "eslint": "^7.3.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0",

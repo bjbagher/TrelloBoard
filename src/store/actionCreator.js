@@ -1,11 +1,11 @@
-import { ADD_TODO, DEL_TODO, SELECT, MOVE_NEXT, MOVE_PREV } from "./actionTypes.js"
+import { ADD_TODO, DEL_TODO, SELECT, MOVE_NEXT, MOVE_PREV, ADD_SWITCH } from "./actionTypes.js"
 
 export const addTodo = input => ({
     type: ADD_TODO, payload: input
 })
 
-export const selectTodo = (id, state) => ({
-    type: SELECT, payload: { id, state }
+export const selectTodo = input => ({
+    type: SELECT, payload: input
 })
 
 export const delTodo = id => ({
@@ -18,4 +18,8 @@ export const movePrev = temp => ({
 
 export const moveNext = temp => ({
     type: MOVE_NEXT, payload: temp
+})
+
+export const addForm = input => ({
+    type: ADD_SWITCH, payload: input
 })

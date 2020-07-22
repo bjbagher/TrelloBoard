@@ -1,5 +1,5 @@
 import { selectorFamily } from "recoil"
-import { ADD_TODO, DEL_TODO, SELECT, MOVE_PREV, MOVE_NEXT } from "./actionTypes"
+import { ADD_TODO, DEL_TODO, SELECT, MOVE_PREV, MOVE_NEXT, ADD_SWITCH } from "./actionTypes"
 import { allStates, selectedState, dispatchState, addState } from "./store.js"
 
 export const reducerSelector = selectorFamily({
@@ -28,7 +28,7 @@ export const reducerSelector = selectorFamily({
                 const nextState = all.states[all.id[state.key] + 1]
                 set(nextState, [...get(nextState), { id: get(nextState).length + 1, title: action.payload.title, priority: action.payload.priority, img: action.payload.img }])
                 break
-            case "ADD_SWITCH":
+            case ADD_SWITCH:
                 if (get(addState)) set(addState, false)
                 else set(addState, action.payload)
                 break
@@ -37,3 +37,4 @@ export const reducerSelector = selectorFamily({
         }
     }
 })
+

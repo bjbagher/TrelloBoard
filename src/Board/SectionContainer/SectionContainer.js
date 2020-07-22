@@ -1,31 +1,32 @@
-import React, { useRef } from "react"
+import React from "react"
 import { useRecoilValue, useSetRecoilState } from "recoil"
 import { dispatchState, selectedState } from "../../store/store.js"
-import { addTodo, selectTodo, delTodo } from "../../store/actionCreator.js"
+import { addForm, selectTodo, delTodo } from "../../store/actionCreator.js"
 import { reducerSelector } from "../../store/reducer.js"
-import Section from "./Section.js"
+import Section from "./Section/Section.js"
 
-export default function NamedSection({ state, id }) {
+export default function SectionContainer({ state, id }) {
+
     const stateVal = useRecoilValue(state)
     const setDispatch = useSetRecoilState(dispatchState)
     const reducer = useSetRecoilState(reducerSelector(state))
     const selected = useRecoilValue(selectedState)
 
+    const dispatch = action => {
+        setDispatch(action)
+        reducer()
+    }
 
     const handleSetInput = () => {
-        setDispatch({ type: "ADD_SWITCH", payload: state })
-        reducer()
+        dispatch(addForm(state))
     }
 
     const handleSelect = id => {
-        setDispatch(selectTodo(id, state))
-        reducer()
+        dispatch(selectTodo(id))
     }
 
     const handleDelete = () => {
-        console.log("id")
-        setDispatch(delTodo(selected.id))
-        reducer()
+        dispatch(delTodo(selected.id))
         handleSelect(null)
     }
 
