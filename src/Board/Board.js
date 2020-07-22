@@ -11,7 +11,6 @@ export default function Board() {
     return (
         <>
             <div className="outer-input">
-
                 <h2>Add Todo List:</h2>
                 <input ref={input}></input>
                 <button onClick={() => setStates({

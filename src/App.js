@@ -14,8 +14,8 @@ import { BrowserRouter as Router, Link, Switch } from "react-router-dom"
 
 
 import Amplify, { Auth, Hub } from 'aws-amplify';
-// import awsconfig from './aws-exports';
-// Amplify.configure(awsconfig);
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 class Landing extends Component {
     state = { user: null, customState: null };
@@ -296,7 +296,6 @@ function App() {
                         <li>
                             <Link to="/board">Board</Link>
                         </li>
-                        <button onClick={() => Auth.signOut()}>Sign Out {"a"}</button>
                     </ul>
                 </nav>
                 <Switch>
